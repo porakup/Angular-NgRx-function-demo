@@ -1,0 +1,235 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+.user-info {
+    display: flex;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1);
+}
+
+.user-icon {
+    width: fit-content;
+    margin: 2px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.user-icon > .icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.icon > img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -40%;
+    height: 100%;
+    width: auto;
+}
+
+.user-detail {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.user-detail > .username{
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.user-detail > .follower{
+    font-size: 14px;
+}
+
+.follow-button {
+    position: absolute;
+    right: 50px;
+    background-color: red;
+    height: 40%;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.follow-button > div {
+    margin-top: 12%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    color: white;
+}
+
+
+.video{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.video-content {
+    display: flex;
+    flex-basis: fit-content;
+    margin: 10px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.video-display {
+    margin: 0px;
+    padding: 0px;
+}
+
+.video-thumbnail {
+    position: relative;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.video-image {
+    height: 200px;
+    width: auto;
+}
+
+.video-time {
+    position: absolute;
+    bottom: 12px;
+    right: 5px;
+    width: 40px;
+    height: 20px;
+    background-color: #433e3e;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.video-detail {
+    margin: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.video-detail > .title {
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.video-detail > .info {
+   margin-top: 5px;
+   display: flex;
+   font-weight: 400px;
+   color: grey;
+}
+
+.info > .view {
+    margin-left: 2px;
+    font-size: 15px;
+}
+
+.info > .date {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.disable {
+    background-color: grey;
+}
+
+.not-found {
+    margin-top: 100px;
+    text-align: center;
+    color: grey;
+    width: 100%;
+}
+
+.video-owner {
+    margin-top: 10px;
+    display: flex;
+}
+
+.video-owner > .owner-icon {
+    width: fit-content;
+    margin-top: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.video-owner > .owner-icon > .icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.video-owner > .owner-icon > .icon > img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -40%;
+    height: 100%;
+    width: auto;
+}
+
+.video-owner > .user {
+    margin-top: 12px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        overflow-y: hidden;
+    }
+
+    .user-icon {
+        width: fit-content;
+        margin: 2px;
+        cursor: pointer;
+    }
+
+    .follow-button {
+        position: static;
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: red;
+        height: 40%;
+        width: 100px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .follow-button > div {
+        margin-top: 14px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 10px;
+        color: white;
+    }
+
+  }

@@ -1,0 +1,116 @@
+<div class="container">
+        <div class="main-video">
+            <div class="main-video-display">
+                <video controls [poster]="video.thumbnail">
+                    <source src="" type="video/mp4">
+                  </video>
+            </div>
+            <div class="main-video-detail">
+                <div class="video-title">
+                    <div class="title">{{video.title}}</div>
+                    <div class="like" [ngClass]="{'disableLike': !likeAble}">
+                        <i class="fa fa-heart" (click)="like()"></i>
+                        <div class="count">
+                            {{video.like}}
+                        </div>
+                    </div>
+                </div>
+                <div class="video-tag">
+                    <a *ngFor="let t of video.tags">{{t.tag}}</a>
+                </div>
+                <div class="video-view">
+                    {{video.views}} views &nbsp;-&nbsp; {{video.createdDate | datePipe}}
+                </div>
+            </div>
+            <div class="main-video-user-info">
+                <div class="user-icon" (click)="gotoUser(videoOwner.username)">
+                    <div class="icon">
+                        <img [src]="videoOwner.profile">
+                    </div>
+                </div>
+                <div class="user-detail">
+                    <div class="username" (click)="gotoUser(videoOwner.username)">
+                        {{videoOwner.username}}
+                    </div>
+                    <div class="follower">
+                        {{videoOwner.follower}} &nbsp;subscribers
+                    </div>
+                </div>
+                <div class="follow-button" *ngIf="videoOwner.userId !== userId" [ngClass]="{'disable': !followAble}" (click)="follow()">
+                    <div>SUBSCRIBE</div>
+                </div>
+            </div>
+            <div class="main-video-comment-info">
+                <div class="comment-label">
+                    <div>
+                        {{commentList.length}}&nbsp;&nbsp;
+                    </div>
+                    <div>
+                        <span>Comments</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="texe" [(ngModel)]="comment" placeholder="Add a comment..." (keyup.enter)="addComment()">
+                </div>
+                <div class="comment-container">
+                    <ng-template [ngIf]="commentList.length" [ngIfElse]="noComment">
+                    <div class="card-comment" *ngFor="let comment of commentList">
+                        <div class="comment-info">
+                            <div class="comment-icon" (click)="gotoUser(comment.commenterName)">
+                                <div class="icon">
+                                    <img [src]="comment.commenterProfile">
+                                </div>
+                            </div>
+                            <div class="comment-detail">
+                                <div class="comment-name">
+                                    <div class="coment" (click)="gotoUser(comment.commenterName)">
+                                        <span>{{comment.commenterName}}</span>
+                                    </div>
+                                    <div class="comment-date">
+                                        {{comment.commentedDate | timePipe}}
+                                    </div>
+                                </div>
+                                <div class="comment-text">
+                                    <div class="comment">
+                                        {{comment.comment}}
+                                    </div>
+                                    <div class="action-button" data-tooltip="Delete" *ngIf="videoOwner.userId === userId" (click)="deleteComment(comment.commentId)">
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #noComment>
+                    <div class="no-comment">
+                        <span>No Comment</span>
+                    </div>
+                </ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="next-video">
+            <div class="next-label">
+                <a>next</a>
+            </div>
+            <div class="next-video-content" *ngFor="let nv of nextVideoList">
+                <div class="next-video-display" (click)="gotoVideo(nv.videoId)">
+                    <div class="next-video-thumbnail">
+                        <img [src]="nv.thumbnail" class="next-video-image">
+                        <div class="next-video-time">
+                           {{nv.duration}}
+                        </div>
+                    </div>
+                </div>
+                <div class="next-video-detail">
+                    <div class="next-title" [attr.data-tooltip]="nv.title" (click)="gotoVideo(nv.videoId)">{{nv.title}}</div>
+                    <div class="next-info">
+                        <div class="next-user" [attr.data-tooltip]="nv.username" (click)="gotoUser(nv.username)">{{nv.username}}</div>
+                        <div class="next-date">{{nv.createdDate | timePipe}}</div>
+                        <div class="next-view">{{nv.views}} views</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

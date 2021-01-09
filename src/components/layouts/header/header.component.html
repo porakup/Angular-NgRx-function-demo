@@ -1,0 +1,14 @@
+<div class="header">
+    <div class="input-search">
+        <input-search (searchText)="handleSearch($event)"></input-search>
+    </div>
+    <div class="user-icon" (click)="gotoHome()">
+        <div class="icon">
+            <img [src]="profileUrl">
+        </div>
+    </div>
+    <div class="user" (click)="gotoHome()">{{username}}</div>
+    <div class="logout-button" *ngIf="isLoggedIn" (click)="logout()">
+        <div>Logout</div>
+    </div>
+</div>

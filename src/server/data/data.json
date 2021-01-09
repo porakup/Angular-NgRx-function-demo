@@ -1,0 +1,212 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "username": "AAA",
+            "password": "password",
+            "profile": "aaa.jpg"
+        },
+        {
+            "id": "2",
+            "username": "BBB",
+            "password": "password",
+            "profile": "bbb.jpg"
+        },
+        {
+            "id": "3",
+            "username": "CCC",
+            "password": "password",
+            "profile": "ccc.jpg"
+        },
+        {
+            "id": "4",
+            "username": "DDD",
+            "password": "password",
+            "profile": "ddd.jpg"
+        },
+        {
+            "id": "5",
+            "username": "EEE",
+            "password": "password",
+            "profile": "eee.jpg"
+        }
+    ],
+    "videos": [
+        {
+            "id": "1",
+            "title": "Cat 1",
+            "duration": "02.50",
+            "createdDate": "25/12/2020 08:07:12",
+            "thumbnail": "cat1.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "title": "Cat 2",
+            "duration": "03.20",
+            "createdDate": "26/12/2020 08:08:12",
+            "thumbnail": "cat2.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "3",
+            "title": "Cat 3",
+            "duration": "04.10",
+            "createdDate": "27/12/2020 08:09:12",
+            "thumbnail": "cat3.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "4",
+            "title": "Cat 4",
+            "duration": "02.30",
+            "createdDate": "28/12/2020 08:10:12",
+            "thumbnail": "cat4.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "5",
+            "title": "Cat 5",
+            "duration": "04.10",
+            "createdDate": "29/12/2020 11:07:12",
+            "thumbnail": "cat5.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "6",
+            "title": "Cat 6",
+            "duration": "05.20",
+            "createdDate": "30/12/2020 12:07:12",
+            "thumbnail": "cat6.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "7",
+            "title": "Cat 7",
+            "duration": "06.40",
+            "createdDate": "31/12/2020 13:07:12",
+            "thumbnail": "cat7.jpg",
+            "views": 2,
+            "userId": "1"
+        },
+        {
+            "id": "8",
+            "title": "Squirrel 1",
+            "duration": "02.48",
+            "createdDate": "25/12/2020 08:20:56",
+            "thumbnail": "squirrel1.jpg",
+            "views": 0,
+            "userId": "2"
+        },
+        {
+            "id": "9",
+            "title": "Squirrel 2",
+            "duration": "01.48",
+            "createdDate": "26/12/2020 08:25:58",
+            "thumbnail": "squirrel2.jpg",
+            "views": 0,
+            "userId": "2"
+        },
+        {
+            "id": "10",
+            "title": "Squirrel 3",
+            "duration": "03.48",
+            "createdDate": "27/12/2020 08:40:57",
+            "thumbnail": "squirrel3.jpg",
+            "views": 0,
+            "userId": "2"
+        },
+        {
+            "id": "11",
+            "title": "Owl",
+            "duration": "02.32",
+            "createdDate": "25/12/2020 08:40:45",
+            "thumbnail": "owl.jpg",
+            "views": 0,
+            "userId": "3"
+        },
+        {
+            "id": "12",
+            "title": "Fox",
+            "duration": "02.35",
+            "createdDate": "08/12/2020 09:50:45",
+            "thumbnail": "fox.jpg",
+            "views": 0,
+            "userId": "5"
+        }
+    ],
+    "tags": [
+        {
+            "id": "1",
+            "tag": "pet",
+            "videoId": "1"
+        },
+        {
+            "id": "2",
+            "tag": "kitten",
+            "videoId": "1"
+        }
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "text": "Cool!",
+            "commentedDate": "15/11/2020 10:20:30",
+            "videoId": "1",
+            "userId": "4"
+        },
+        {
+            "id": "2",
+            "text": "Coolest!",
+            "commentedDate": "25/12/2020 10:40:10",
+            "videoId": "1",
+            "userId": "5"
+        },
+        {
+            "id": "3",
+            "text": "Good!",
+            "commentedDate": "30/12/2020 09:12:40",
+            "videoId": "1",
+            "userId": "2"
+        },
+        {
+            "id": "4",
+            "text": "Very Good!",
+            "commentedDate": "01/01/2021 08:16:30",
+            "videoId": "1",
+            "userId": "3"
+        },
+        {
+            "id": "5",
+            "text": "Thank You!",
+            "commentedDate": "08/01/2021 08:44:20",
+            "videoId": "1",
+            "userId": "1"
+        }
+    ],
+    "likes": [
+        {
+            "id": "1",
+            "videoId": "1",
+            "userId": "4"
+        },
+        {
+            "id": "2",
+            "videoId": "1",
+            "userId": "5"
+        }
+    ],
+    "followings": [
+        {
+            "id": "1",
+            "userId": "4",
+            "followingId": "1"
+        }
+    ]
+}

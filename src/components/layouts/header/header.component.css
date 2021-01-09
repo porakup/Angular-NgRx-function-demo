@@ -1,0 +1,106 @@
+.header {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    background-color: red;
+    box-sizing: border-box;
+}
+
+.input-search {
+    margin: 0px auto;
+    width: 500px;
+}
+
+.user-icon {
+    width: fit-content;
+    margin: 2px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user-icon > .icon {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.icon > img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -40%;
+    height: 100%;
+    width: auto;
+}
+
+.user {
+    margin-right: 50px;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.logout-button {
+    margin-right: 50px;
+    background-color: white;
+    height: 50%;
+    width: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button > div {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    margin-top: 3px;
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .input-search {
+        margin: 0px auto;
+        margin-top: -5px;
+        margin-left: 5px;
+        width: 500px;
+    }
+
+    .user-icon {
+        width: fit-content;
+        margin: 2px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .user {
+        font-size: 12px;
+        margin-right: 5px;
+        color: white;
+        
+    }
+
+    .logout-button {
+        margin-right: 5px;
+        background-color: white;
+        height: 50%;
+        width: 50px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .logout-button > div {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 8px;
+        margin-top: 6px;
+        color: red;
+    }
+
+  }

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="video">
+        <ng-template [ngIf]="videoList.length" [ngIfElse]="noVideo">
+            <div class="video-content" *ngFor="let video of videoList" (click)="gotoVideo(video.videoId)">
+                <div class="video-display">
+                    <div class="video-thumbnail">
+                        <img [src]="video.thumbnail" class="video-image">
+                        <div class="video-time">
+                        {{video.duration}}
+                        </div>
+                    </div>
+                </div>
+                <div class="video-detail">
+                    <div class="title" (click)="gotoVideo(video.videoId)">{{video.title}}</div>
+                    <div class="info">
+                        <div class="view">{{video.views}} views &nbsp; -</div>
+                        <div class="date">{{video.createdDate | timePipe}}</div>
+                    </div>
+                    <div class="video-owner">
+                        <div class="owner-icon" (click)="gotoUser(video.username)">
+                            <div class="icon">
+                                <img [src]="video.profile">
+                            </div>
+                        </div>
+                        <div class="user" (click)="gotoUser(video.username)">{{video.username}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #noVideo>
+            <div class="not-found">
+                <span>Video Not Found</span>
+            </div>
+        </ng-template>
+    </div>
+</div>

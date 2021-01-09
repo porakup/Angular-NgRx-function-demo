@@ -1,0 +1,65 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+    background-color: #f1f1f1;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    overflow: hidden;
+}
+
+.card-login {
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    border-radius: 20px;
+    height: 200px;
+    width: 300px;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    display: inline-block;
+    vertical-align: middle;
+    line-height: initial;
+    text-align: left;
+    position: relative;
+}
+
+.input-container {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    width: 200px;
+    top: 25px;
+    left: 50px;
+}
+
+.input-group {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 12px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+.error-message {
+    text-align: center;
+    align-items: middle;
+    color: red;
+    font-size: 12px;
+}

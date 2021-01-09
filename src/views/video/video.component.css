@@ -1,0 +1,446 @@
+.container {
+    margin: 5px;
+    padding: 0px;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.main-video {
+    margin: 0px;
+    padding: 0px;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+.main-video-display{
+    cursor: pointer;
+}
+
+.main-video-display > video {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-video-detail {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.video-title {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.like {
+    position: absolute;
+    right: 20px;
+    display: flex;
+}
+
+.like > i {
+    color: red;
+    margin: auto;
+    cursor: pointer;
+}
+
+.like > .count {
+    margin-left: 5px;
+}
+
+.video-tag {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.video-tag > a {
+    color: blue;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0 5px;
+}
+
+.video-view {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 12px;
+    color: grey;
+}
+
+
+
+.main-video-user-info {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 5px;
+    align-items: center;
+    box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1);
+}
+
+.user-icon {
+    width: fit-content;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.user-icon > .icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.user-icon > .icon > img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -40%;
+    height: 100%;
+    width: auto;
+}
+
+.user-detail {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.user-detail > .username{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user-detail > .follower{
+    font-size: 10px;
+}
+
+.follow-button {
+    position: absolute;
+    right: 5px;
+    background-color: red;
+    height: 60%;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.follow-button > div {
+    margin-top: 10%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 10px;
+    color: white;
+}
+
+.main-video-comment-info {
+    margin-top: 20px;
+    margin-left: 5px;
+    background-color: white;
+}
+
+.comment-label {
+    display: flex;
+    color: grey;
+    font-size: 10px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    align-items: center;
+    line-height: 15px;
+}
+
+.comment-label > div > span {
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.input-container {
+    margin-top: 8px;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+}
+
+.input-container > input {
+    font-size: 12px;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+}
+
+.comment-container {
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-bottom: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+.card-comment {
+    display: block;
+    margin: 5px;
+    min-height: 50px;
+    margin-bottom: 10px;
+}
+
+.comment-info {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.comment-icon {
+    width: fit-content;
+    margin-top: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.comment-icon > .icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.comment-icon > .icon > img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -40%;
+    height: 100%;
+    width: auto;
+}
+
+.comment-detail {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 95%;
+}
+
+.comment-name {
+    position: relative;
+    display: flex;
+    color: gray;
+    font-size: 12px;
+}
+
+.comment-name > .coment {
+    cursor: pointer;
+}
+
+.comment-date {
+    position: absolute;
+    right: 10px;
+}
+
+.comment-text {
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    font-size: 13px;
+}
+
+.action-button {
+    position: absolute;
+    right: 10px;
+    color: red;
+    cursor: pointer;
+}
+
+.no-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: grey;
+    width: 100%;
+}
+
+.next-video{
+    margin: 10px;
+    padding: 0px;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.next-label {
+    margin: 0px 0px 10px 5px;
+}
+
+.next-label > a {
+    color: blue;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.next-video-content {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+}
+
+.next-video-thumbnail {
+    position: relative;
+    display: flex;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.next-video-image {
+    height: 100px;
+}
+
+.next-video-time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 20px;
+    background-color: #433e3e;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.next-video-detail {
+    margin: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.next-title {
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.next-info {
+   position: absolute;
+   bottom: 5px;
+   display: block;
+   font-weight: 400px;
+   color: grey;
+}
+
+.next-user {
+    font-size: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.next-date {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.next-view {
+    font-size: 12px;
+}
+
+.disable {
+    background-color: grey;
+}
+
+.disableLike > i {
+    color: grey;
+}
+
+::-webkit-input-placeholder {
+    padding-left: 10px;
+}
+::-moz-placeholder {
+    padding-left: 10px;
+}
+:-ms-input-placeholder {
+    padding-left: 10px;
+}
+:-moz-placeholder {
+    padding-left: 10px;
+}
+
+.action-button:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -.90rem;
+    right: -2.1rem;
+    width: fit-content;
+    padding: 0 4px;
+    background: black;
+    color: white;
+    transform: translateX(-50%);
+}
+
+.next-title:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -.90rem;
+    width: fit-content;
+    padding: 0 4px;
+    background: black;
+    color: white;
+    transform: translateX(-50%);
+}
+
+.next-user:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -.90rem;
+    width: fit-content;
+    padding: 0 4px;
+    background: black;
+    color: white;
+    transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        overflow-y: hidden;
+    }
+
+    .main-video{
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .next-video{
+        display: block;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 40px;
+    }
+  }

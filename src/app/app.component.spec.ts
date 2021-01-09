@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sd-test'`, () => {
+  it(`should have as title 'angular-ngrx-test'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('sd-test');
+    expect(app.title).toEqual('angular-ngrx-test');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('sd-test app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angular-ngrx-test app is running!');
   });
 });

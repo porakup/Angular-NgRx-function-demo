@@ -1,0 +1,44 @@
+    <div class="container">
+        <div class="user-info">
+            <div class="user-icon">
+                <div class="icon">
+                    <img [src]="user.profile">
+                </div>
+            </div>
+            <div class="user-detail">
+                <div class="username">
+                    {{user.username}}
+                </div>
+                <div class="follower">
+                    {{user.follower}}&nbsp;&nbsp;subscribers
+                </div>
+            </div>
+            <div class="follow-button" *ngIf="user.userId !== userId" [ngClass]="{'disable': !followAble}" (click)="follow()">
+                <div>SUBSCRIBE</div>
+            </div>
+        </div>
+        <div class="video-container">
+            <div class="video">
+                <div class="video-content" *ngFor="let video of videoList" (click)="gotoVideo(video.videoId)">
+                    <div class="video-display">
+                        <div class="video-thumbnail">
+                            <img [src]="video.thumbnail" class="video-image">
+                            <div class="video-time">
+                            {{video.duration}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-detail">
+                        <div class="title">{{video.title}}</div>
+                        <div class="info">
+                            <div class="view">{{video.views}} views</div>
+                            <div class="date">{{video.createdDate | timePipe}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="not-found" *ngIf="!videoList.length">
+            <span>Video Not Found</span>
+        </div>
+    </div>
