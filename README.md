@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # AngularNgrxTest
-=======
-# Angular-Ngrx-Test
->>>>>>> d7d1ffc5ebbca4fb0a136f60fc570780180dbbc6
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
