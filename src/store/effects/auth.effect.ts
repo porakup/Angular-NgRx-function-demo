@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Actions, ofType, Effect } from '@ngrx/effects';
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { switchMap, catchError, map, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -21,55 +21,60 @@ export class AuthEffect {
     private store: Store<AppState>,
   ) {}
 
-  @Effect()
-  login = this.actions$.pipe(
-    ofType(AuthAction.LOGIN),
-    switchMap((action: AuthAction.LoginAction) => {
-      return this.authService.login({username: action.payload.username, password: action.payload.password})
+  login = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthAction.LoginAction),
+    switchMap((action) => {
+      return this.authService.login({username: action.username, password: action.password})
         .pipe(
           map(resp => {
             localStorage.setItem('user', JSON.stringify(resp));
-            return new AuthAction.SetLoginAction(resp);
+            return AuthAction.SetLoginAction(resp);
           }),
           catchError(err => {
             return throwError(err);
           })
         );
     })
-  );
-
-  @Effect({ dispatch: false })
-  setLogin= this.actions$.pipe(
-    ofType(AuthAction.SET_LOGIN),
-    tap((action: AuthAction.SetLoginAction) => {
-      if (action.payload.isLoggedIn) {
-        this.store.dispatch(new RequestAction.ClearLoginMessageAction());
-        this.router.navigateByUrl(`/user/${action.payload.username}`);
-      }
-    })
+    )
   );
 
 
-  @Effect()
-  checkAuth = this.actions$.pipe(
-    ofType(AuthAction.CHECK_AUTH),
-    map((action: AuthAction.CheckAuthAction) => {
-        if (action.payload.isLoggedIn) {
-          return new AuthAction.SetAuthAction(action.payload);
-        }else {
-          return new AuthAction.LogoutAction();
+  setLogin = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthAction.SetLoginAction),
+      tap((action) => {
+        if (action.isLoggedIn) {
+          this.store.dispatch(RequestAction.ClearLoginMessageAction());
+          this.router.navigateByUrl(`/user/${action.username}`);
         }
-    })
+      })
+    ), { dispatch: false }
   );
 
 
-  @Effect({ dispatch: false })
-  logout = this.actions$.pipe(
-    ofType(AuthAction.LOGOUT),
-    tap(() => {
-      localStorage.removeItem('user');
-      this.router.navigateByUrl('/login');
-    })
+  checkAuth = createEffect(() =>
+  this.actions$.pipe(
+      ofType(AuthAction.CheckAuthAction),
+        map((action) => {
+          if (action.isLoggedIn) {
+            return AuthAction.SetAuthAction(action);
+          }else {
+            return AuthAction.LogoutAction();
+          }
+      })
+    )
+  );
+
+
+  logout = createEffect(() =>
+  this.actions$.pipe(
+      ofType(AuthAction.LogoutAction),
+      tap(() => {
+        localStorage.removeItem('user');
+        this.router.navigateByUrl('/login');
+      })
+    ), { dispatch: false }
   );
 
 }

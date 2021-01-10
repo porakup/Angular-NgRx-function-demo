@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if(!user) {
       this.router.navigateByUrl('/login');
     }else {
-      this.store.dispatch(new AuthAction.CheckAuthAction(user));
+      this.store.dispatch(AuthAction.CheckAuthAction(user));
     }
 
     this.sub1 = this.store.pipe(select(getRequest)).subscribe(request => {
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, OnDestroy {
           allowOutsideClick: false
         }).then((result) => {
           if (result.isConfirmed) {
-            this.store.dispatch(new RequestAction.ClearMessageAction());
+            this.store.dispatch(RequestAction.ClearMessageAction());
           }
         })
       }

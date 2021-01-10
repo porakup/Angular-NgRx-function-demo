@@ -90,7 +90,7 @@ export class UserComponent implements OnInit, OnDestroy {
         reject(err);
       });
     });
-    this.store.dispatch(new RequestAction.ClearRequestAction());
+    this.store.dispatch(RequestAction.ClearRequestAction());
   }
 
   async getFollowStatus() {

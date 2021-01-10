@@ -141,7 +141,7 @@ export class VideoComponent implements OnInit, OnDestroy {
                   });
                 });
                 
-                this.store.dispatch(new RequestAction.ClearRequestAction());
+                this.store.dispatch(RequestAction.ClearRequestAction());
     }
 
     async getCommnet() {

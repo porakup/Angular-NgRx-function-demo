@@ -1,23 +1,12 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { SearchState } from '../states/search.state';
 
-export const SET_SEARCH = '[Search] Set Search';
-export const CLEAR_SEARCH = '[Search] Clear Search';
+
+export const SetSearchAction = createAction('[Search] Set Search',props<SearchState>());
+
+export const ClearSearchAction = createAction('[Search] Clear Search');
 
 
-export class SetSearchAction implements Action {
-    readonly type = SET_SEARCH;
-
-    constructor(public payload: SearchState) {}
-}
-
-export class ClearSearchAction implements Action {
-    readonly type = CLEAR_SEARCH;
-}
-
-export type SearchAction =
-  | SetSearchAction
-  | ClearSearchAction
 
   
 

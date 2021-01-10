@@ -41,7 +41,7 @@ export class CoreComponent implements OnInit, OnDestroy {
       (event: Event) => {
         if(event instanceof NavigationStart) {
           if(this.query && event.url !== '/search'){
-            this.store.dispatch(new SearchAction.ClearSearchAction());
+            this.store.dispatch(SearchAction.ClearSearchAction());
           }
         }
       });

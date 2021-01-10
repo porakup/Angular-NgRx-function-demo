@@ -1,21 +1,23 @@
-import { initialSearchState } from '../states/search.state';
+import { initialSearchState, SearchState } from '../states/search.state';
 import * as SearchAction from '../actions/search.action';
+import { Action, createReducer, on } from '@ngrx/store';
 
 
-export default function searchReducer(
-    state = initialSearchState,
-    action: SearchAction.SearchAction
-  ) {
-    switch (action.type) {  
-        case SearchAction.SET_SEARCH:
-              return {
-                  query: action.payload.query,
-              };  
-        case SearchAction.CLEAR_SEARCH:
-              return {
-                  query: null
-              };        
-      default:
-        return state;
-    }
-  }
+const _searchReducer = createReducer(initialSearchState,
+  on(
+    SearchAction.SetSearchAction,
+      (state, action) => ({
+          query: action.query,
+          })
+    ),
+    on(
+      SearchAction.ClearSearchAction,
+      () => ({
+          query: null,
+          })
+    )
+);
+
+export default function searchReducer(state: SearchState, action: Action) {
+  return _searchReducer(state, action);
+}

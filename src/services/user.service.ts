@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http: HttpClient, private store: Store<AppState>) {}
 
   public getUser(username: string): Observable<User> {
-    this.store.dispatch(new RequestAction.AddRequestAction());
+    this.store.dispatch(RequestAction.AddRequestAction());
     return this.http.get<User>(APP.BASE_URL+`/api/user/${username}`)
   }
 

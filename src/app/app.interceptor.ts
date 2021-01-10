@@ -33,16 +33,16 @@ export class AppInterceptor implements HttpInterceptor {
             return event;
         }),
         catchError((error: HttpErrorResponse) => {
-          this.store.dispatch(new RequestAction.ClearRequestAction());
+          this.store.dispatch(RequestAction.ClearRequestAction());
           if (error instanceof HttpErrorResponse && error.status === 401) {
             let message = error.error.message
-            this.store.dispatch(new RequestAction.SetLoginMessageAction({message}));
+            this.store.dispatch(RequestAction.SetLoginMessageAction({message}));
             localStorage.removeItem('user');
             this.router.navigateByUrl('/log-in');
           }else if (error instanceof HttpErrorResponse) {
             let message = error.error.message
             if(message) {
-              this.store.dispatch(new RequestAction.SetMessageAction({message}));
+              this.store.dispatch(RequestAction.SetMessageAction({message}));
             }
           }
           return throwError(error);

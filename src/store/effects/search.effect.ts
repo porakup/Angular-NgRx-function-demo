@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Actions, ofType, Effect } from '@ngrx/effects';
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
 import * as SearchAction from '../actions/search.action';
@@ -14,12 +14,13 @@ export class SearchEffect {
     private router: Router,
   ) {}
 
-  @Effect({ dispatch: false })
-  search = this.actions$.pipe(
-    ofType(SearchAction.SET_SEARCH),
-    tap(() => {
-      this.router.navigateByUrl('/search');
-    })
+  search = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SearchAction.SetSearchAction),
+      tap(() => {
+        this.router.navigateByUrl('/search');
+      })
+    ), { dispatch: false }
   );
 
 }

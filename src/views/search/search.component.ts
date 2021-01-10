@@ -56,7 +56,7 @@ export class SearchComponent implements OnInit, OnDestroy {
             reject(err);
           });
         });
-        this.store.dispatch(new RequestAction.ClearRequestAction());
+        this.store.dispatch(RequestAction.ClearRequestAction());
       }
     });
 

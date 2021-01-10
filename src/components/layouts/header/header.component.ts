@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
 
   handleSearch(text: any){
     if(text) {
-      this.store.dispatch(new SearchAction.SetSearchAction({query: text}));
+      this.store.dispatch(SearchAction.SetSearchAction({query: text}));
     }
   }
 
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.store.dispatch(new AuthAction.LogoutAction());
+    this.store.dispatch(AuthAction.LogoutAction());
   }
 
 }

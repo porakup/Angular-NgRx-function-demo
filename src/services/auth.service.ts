@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient, private store: Store<AppState>) {}
 
   login(request: any): Observable<Auth> {
-    this.store.dispatch(new RequestAction.AddRequestAction());
+    this.store.dispatch(RequestAction.AddRequestAction());
     return this.http.post<Auth>(APP.BASE_URL+'/api/login', request);
   }
 

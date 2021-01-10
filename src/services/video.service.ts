@@ -15,17 +15,17 @@ export class VideoService {
   constructor(private http: HttpClient, private store: Store<AppState>) {}
 
   public getVideoByUsername(username: string): Observable<Array<Video>> {
-    this.store.dispatch(new RequestAction.AddRequestAction());
+    this.store.dispatch(RequestAction.AddRequestAction());
     return this.http.get<Array<Video>>(APP.BASE_URL+`/api/getVideo/${username}`);
   }
 
   public searchVideo(query: string): Observable<Array<Video>> {
-    this.store.dispatch(new RequestAction.AddRequestAction());
+    this.store.dispatch(RequestAction.AddRequestAction());
     return this.http.get<Array<Video>>(APP.BASE_URL+`/api/search?result=${query}`);
   }
 
   public getVideoById(videoId: string): Observable<Video> {
-    this.store.dispatch(new RequestAction.AddRequestAction());
+    this.store.dispatch(RequestAction.AddRequestAction());
     return this.http.get<Video>(APP.BASE_URL+`/api/video/${videoId}`);
   }
 
@@ -38,7 +38,7 @@ export class VideoService {
   }
 
   public getNextVideo(request: any): Observable<Array<Video>> { 
-    this.store.dispatch(new RequestAction.AddRequestAction());
+    this.store.dispatch(RequestAction.AddRequestAction());
     return this.http.post<Array<Video>>(APP.BASE_URL+'/api/nextVideos', request);
   }
 

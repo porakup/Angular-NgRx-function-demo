@@ -1,45 +1,58 @@
-import { initialRequestState } from '../states/request.state';
+import { initialRequestState, RequestState } from '../states/request.state';
 import * as RequestAction from '../actions/request.action';
+import { Action, createReducer, on } from '@ngrx/store';
+import { state } from '@angular/animations';
 
 
-export default function loaderReducer(
-    state = initialRequestState,
-    action: RequestAction.RequestAction
-  ) {
-    switch (action.type) {  
-        case RequestAction.ADD_REQUEST:
-              let req = state.request;
-              req++
-              return {
-                  ...state,
-                  request: req
-              };     
-        case RequestAction.CLEAR_REQUEST:
-              return {
-                ...state,
-                request: 0
-              };
-        case RequestAction.SET_MESSAGE:
-              return {
-                 ...state,
-                  message: action.payload.message
-              };     
-        case RequestAction.CLEAR_MESSAGE:
-              return {
-                ...state,
-                message: null
-              };
-        case RequestAction.SET_LOGIN_MESSAGE:
-              return {
-                 ...state,
-                  loginMessage: action.payload.message
-              };     
-        case RequestAction.CLEAR_LOGIN_MESSAGE:
-              return {
-                ...state,
-                loginMessage: null
-              };          
-      default:
-        return state;
+const _requestReducer = createReducer(initialRequestState,
+      on(
+          RequestAction.AddRequestAction,
+          (state) => {
+                      let req = state.request;
+                      req++;
+                      return {
+                        ...state,
+                        request: req
+                      };                
+                    }
+        ),
+        on(
+            RequestAction.ClearRequestAction,
+            (state) => ({
+                    ...state,
+                    request: 0
+                })
+          ),
+          on(
+            RequestAction.SetMessageAction,
+            (state, action) => ({
+                    ...state,
+                    message: action.message
+                })
+          ),
+          on(
+            RequestAction.ClearMessageAction,
+            (state) => ({
+                    ...state,
+                    message: null
+                })
+          ),
+          on(
+            RequestAction.SetLoginMessageAction,
+            (state, action) => ({
+                    ...state,
+                    loginMessage: action.message
+                })
+          ),
+          on(
+            RequestAction.ClearLoginMessageAction,
+            (state) => ({
+                    ...state,
+                    loginMessage: null
+                })
+          )
+      );
+
+export default function requestReducer(state: RequestState, action: Action) {
+      return _requestReducer(state, action);
     }
-  }
