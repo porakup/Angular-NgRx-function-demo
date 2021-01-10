@@ -82,7 +82,6 @@
 .main-video-user-info {
     display: flex;
     position: relative;
-    width: 100%;
     background-color: white;
     margin-top: 10px;
     margin-left: 5px;
@@ -129,7 +128,7 @@
 
 .follow-button {
     position: absolute;
-    right: 5px;
+    right: 10px;
     background-color: red;
     height: 60%;
     width: 70px;
