@@ -735,7 +735,7 @@ app.get("/api/search", async (request, response) => {
 
 app.get('/*', function(request, response){
     response.status(200).send('api start');
-  });
+});
 
 app.listen(port, () => {
     console.log(`start port: ${port}`);
