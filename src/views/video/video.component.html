@@ -9,7 +9,7 @@
                 <div class="video-title">
                     <div class="title">{{video.title}}</div>
                     <div class="like" [ngClass]="{'disableLike': !likeAble}">
-                        <i class="fa fa-heart" (click)="like()"></i>
+                        <i class="fa fa-heart" [style.cursor]="videoOwner.userId !== userId? 'pointer' : 'context-menu'" (click)="like()"></i>
                         <div class="count">
                             {{video.like}}
                         </div>
