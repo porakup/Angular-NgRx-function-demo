@@ -310,6 +310,26 @@ input:focus {
     height: 100px;
 }
 
+.next-video-image:empty {
+    animation: loading 1.7s infinite linear;
+    background: #dedfe1;
+    background-image: -webkit-linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+    background-image: linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 178px;
+}
+
+@keyframes loading {
+    0% {
+      background-position: -100px;
+    }
+  
+    100% {
+      background-position: 200px;
+    }
+}
+
 .next-video-time {
     position: absolute;
     bottom: 5px;
