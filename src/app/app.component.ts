@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 import { getRequest ,getMessage } from '../store/getters/request.getter';
 import * as RequestAction from '../store/actions/request.action';
 import { NgxSpinnerService } from 'ngx-spinner';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +20,13 @@ export class AppComponent implements OnInit, OnDestroy {
   sub1: Subscription;
   sub2: Subscription;
   isLoad: boolean = false;
+  html: any;
 
   constructor(private router: Router,
               private store: Store<AppState>,
-              private spinner: NgxSpinnerService) {}
+              private spinner: NgxSpinnerService) {
+                this.html = document.getElementsByTagName("HTML")[0];
+              }
 
   ngOnInit() {
 
@@ -40,10 +43,12 @@ export class AppComponent implements OnInit, OnDestroy {
         if(!this.isLoad) {
           this.isLoad = true;
           this.spinner.show();
+          this.html.setAttribute("style", "overflow-y: hidden;");
         }
       }else if(this.isLoad) {
         this.isLoad = false;
         this.spinner.hide();
+        this.html.setAttribute("style", "overflow-y: scroll;");
       }
     });
 
